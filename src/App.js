@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { data } from "./data";
 
 function App() {
+  const [index, setIndex] = useState(0);
+
+  async function newQuote() {
+    const x = await Math.floor(Math.random() * data.length);
+    setIndex(x);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className="fullpage">
+      <div id="quote-box">
+        <div id="text">{data[index].text}</div>
+        <div id="author"> - {data[index].author}</div>
+        <div className="bottondiv">
+          <a
+            id="tweet-quote"
+            href={`https://www.twitter.com/intent/tweet?text=${encodeURI(
+              data[index].text
+            )}%0A-${encodeURI(data[index].author)}`}
+          >
+            Share on Twitter
+          </a>
+          <button id="new-quote" onClick={newQuote}>
+            New quote
+          </button>
+        </div>
+      </div>
+    </section>
   );
 }
 

@@ -5,9 +5,65 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #bebebe;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.fullpage{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+#quote-box {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 24rem;
+  padding: 20px;
+  background-color: #fafafa;
+  border-radius: 0.5rem;
+}
+
+#text{
+  font-size: 1.5rem;
+  line-height: 2;
+  font-weight: 300;
+  color: #333;
+}
+
+#author{
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: 300;
+  color: #333;
+  text-align: end;
+}
+
+.bottondiv{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#tweet-quote{
+  color: #333;
+}
+
+#new-quote{
+  border: none;
+  padding: 1rem;
+  background-color: #E74C3C;
+  color: #fafafa;
+  border-radius: .5rem;
+  cursor: pointer;
 }
